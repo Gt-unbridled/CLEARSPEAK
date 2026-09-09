@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette */
+  --paper: #faf6ef;
+  --ink: #2b2a28;
+  --ink-soft: #57544d;
+  --sage: #7a8b6f;
+  --sage-deep: #5f7055;
+  --clay: #c17a5a;
+  --line: #e5ded0;
+  --panel: #ffffff;
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-sage: var(--sage);
+  --color-sage-deep: var(--sage-deep);
+  --color-clay: var(--clay);
+  --color-line: var(--line);
+  --color-panel: var(--panel);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-body: var(--font-atkinson);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-atkinson), 'Atkinson Hyperlegible', system-ui, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Respect reduced motion preference throughout */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Visible keyboard focus everywhere - never suppressed */
+:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 2px;
+}
